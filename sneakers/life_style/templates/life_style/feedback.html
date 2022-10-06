@@ -1,0 +1,12 @@
+{% extends 'life_style/base.html' %}
+
+{% block content %}
+<h1>{{ title }}</h1>
+<form action="{% url 'feedback' %}" method="post">
+    {% csrf_token %}
+
+    <p>{{form}}</p>
+
+    <input type="submit" value="Save">
+</form>
+{% endblock %}

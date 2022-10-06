@@ -1,0 +1,24 @@
+{% extends 'life_style/base.html' %}
+
+{% block content %}
+<h1>Товары</h1>
+<ul>
+    {% for p in goods %}
+    <li>
+        <p><img src="{{p.photo.url}}" height="400" width="600" align="center"></p>
+        <p><h3>{{p.sneaker}}</h3></p>
+<!--        <p>Цена {{p.price}} эвро</p>-->
+        <p class="price">${{p.price }}</p>
+
+
+    </li>
+    <form action="{% url "cart:cart_add" p.id %}" method="post">
+        {{ cart_product_form }}
+        {% csrf_token %}
+        <input type="submit" value="Add to cart">
+        </form>
+    {% endfor %}
+
+
+</ul>
+{% endblock %}

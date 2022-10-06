@@ -1,0 +1,20 @@
+{% extends 'life_style/base.html' %}
+{% load thumbnail %}
+
+{% block content %}
+<h1>{{ title }}</h1>
+
+{% for a in article %}
+<!--    {% thumbnail item.image "100x200" crop="center" as a.photo %}-->
+<!--    <img sneakers="{{ a.photo.url }}">-->
+<!--    {% endthumbnail %}-->
+<p align="left"><img src="{{a.photo.url}}" title="{{ a.title }}" height="400" width="600"></p>
+
+<p align="right"><h1>{{ a.title }}</h1></p>
+<p><ul class="hr">
+    <li><a href="{{ a.get_absolute_url }}">Читать обзор полностью</a></li>
+</ul></p>
+
+
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,8 @@
+{% extends "life_style/base.html" %}
+
+{% block content %}
+<h1 align="center">{{title}} {{ post.title }} </h1>
+<p><img src="{{post.photo.url}}" hight="100" aligh="left"> </p>
+<p>{{post.text}}</p>
+
+{% endblock %}
